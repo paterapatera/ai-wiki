@@ -37,7 +37,10 @@ Markdownベースのコマンド定義システム。Cursorエージェントが
 ### Required Tools
 
 - Cursor IDE（エージェント機能が必要）
+- Docker（JSON検証に使用、必須）
 - 標準的なテキストエディタ（Markdown/JSON編集用）
+
+**注意**: Python/Node.jsはホスト環境には不要（Dockerコンテナ内で使用）
 
 ### Common Commands
 
