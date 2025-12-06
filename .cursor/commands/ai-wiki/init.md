@@ -110,6 +110,7 @@ Generate the wiki structure in JSON format with the following structure:
 {
   "title": "[Overall title for the wiki]",
   "description": "[Brief description of the repository]",
+  "project_root": "${inputDir}",
   "sections": [
     {
       "id": "section-1",
@@ -132,6 +133,7 @@ Generate the wiki structure in JSON format with the following structure:
 }
 
 IMPORTANT: For comprehensive view:
+- Include the "project_root" field with the value of `${inputDir}` (the input directory path, e.g., "repo/slack-agent")
 - Include the "sections" array with all section information
 - Include "subsections" array in each section for hierarchical structure
 - Include "parent_section" property in each page object
