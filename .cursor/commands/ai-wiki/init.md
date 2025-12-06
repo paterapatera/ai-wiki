@@ -27,8 +27,7 @@ argument-hint: repo/<指定ディレクトリ>
 5. JSON形式での出力と検証
 
 ## 出力形式
-- 包括的ビュー（`isComprehensiveView=true`）: セクション階層とページの親子関係を含む完全な構造
-- 簡潔ビュー（`isComprehensiveView=false`）: ページのみのシンプルな構造
+- 包括的ビュー: セクション階層とページの親子関係を含む完全な構造
 
 生成されるJSONは、後続のWiki生成プロセスで使用される構造定義として機能します。
 </background_information>
@@ -93,7 +92,6 @@ When designing the wiki structure, include pages that would benefit from visual 
 - State machines
 - Class hierarchies
 
-${isComprehensiveView ? `
 Create a structured wiki with the following main sections:
 - Overview (general information about the project)
 - System Architecture (how the system is designed)
@@ -133,7 +131,7 @@ Generate the wiki structure in JSON format with the following structure:
   ]
 }
 
-IMPORTANT: For comprehensive view (${isComprehensiveView} is true):
+IMPORTANT: For comprehensive view:
 - Include the "sections" array with all section information
 - Include "subsections" array in each section for hierarchical structure
 - Include "parent_section" property in each page object
@@ -141,31 +139,6 @@ IMPORTANT: For comprehensive view (${isComprehensiveView} is true):
 - Section references in "subsections" must reference valid section IDs
 - Page references in section "pages" arrays must reference valid page IDs
 - Parent section references in page "parent_section" must reference valid section IDs
-` : `
-Generate the wiki structure in JSON format with the following structure:
-
-{
-  "title": "[Overall title for the wiki]",
-  "description": "[Brief description of the repository]",
-  "pages": [
-    {
-      "id": "page-1",
-      "title": "[Page title]",
-      "description": "[Brief description of what this page will cover]",
-      "importance": "high|medium|low",
-      "relevant_files": ["[Path to a relevant file]"],
-      "related_pages": ["page-2"]
-    }
-  ]
-}
-
-IMPORTANT: For concise view (${isComprehensiveView} is false):
-- Omit the "sections" property entirely
-- Omit the "parent_section" property from page objects
-- Include only the "pages" array
-- Ensure all page IDs are unique
-- Page references in "related_pages" arrays must reference valid page IDs
-`}
 
 IMPORTANT FORMATTING INSTRUCTIONS:
 - Generate ONLY valid JSON structure as specified above
@@ -178,7 +151,7 @@ IMPORTANT FORMATTING INSTRUCTIONS:
 - All objects must use curly braces {}
 
 IMPORTANT:
-1. Create ${isComprehensiveView ? '8-12' : '4-6'} pages that would make a ${isComprehensiveView ? 'comprehensive' : 'concise'} wiki for this repository
+1. Create 8-12 pages that would make a comprehensive wiki for this repository
 2. Each page should focus on a specific aspect of the codebase (e.g., architecture, key features, setup)
 3. The relevant_files should be actual files from the repository that would be used to generate that page
 4. Generate ONLY valid JSON with the structure specified above, with no markdown code block delimiters
@@ -223,8 +196,7 @@ IMPORTANT:
 1. **`.wiki/wiki_structure.json`**: Wiki構造をJSON形式で表現したファイル
    - ワークスペースルートからの相対パス `.wiki/wiki_structure.json` に保存されます
    - 有効なJSON構文に準拠した形式で出力されます
-   - 包括的ビュー（`${isComprehensiveView}`が`true`）の場合: `sections`配列とページの`parent_section`プロパティを含む完全なJSON構造
-   - 簡潔ビュー（`${isComprehensiveView}`が`false`）の場合: `sections`プロパティを省略し、`pages`配列のみを含むJSON構造
+   - `sections`配列とページの`parent_section`プロパティを含む完全なJSON構造
 
 2. **完了通知**: 処理が正常に完了した場合、ユーザーに完了メッセージを報告します
 
