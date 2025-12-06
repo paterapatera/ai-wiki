@@ -3,7 +3,7 @@ description: 指定されたディレクトリを分析して、Wiki構造をJSO
 argument-hint: repo/<指定ディレクトリ>
 </meta>
 
-# Spec Initialization
+# Wiki トピック生成
 
 <background_information>
 このコマンドは、指定されたリポジトリディレクトリを分析して、そのプロジェクトのWiki構造をJSON形式で生成するためのコマンドです。
