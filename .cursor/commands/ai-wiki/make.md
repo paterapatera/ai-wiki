@@ -199,8 +199,8 @@ Remember:
 
 4. 生成されたMarkdownコンテンツにページ間リンクを追加します。
    - `${page.related_pages}` 配列をループ処理して、各関連ページIDに対してリンクを生成します
-   - ページIDからファイルパスへのマッピング: `${relatedPageId}` → `${relatedPageId}.md`
-   - Markdownリンク構文（`[${relatedPageTitle}](${relatedPageId}.md)`）で生成します
+   - ページIDからファイルパスへのマッピング: `${relatedPageId}` → `${relatedPageId}`（`.md`拡張子は含めない）
+   - Markdownリンク構文（`[${relatedPageTitle}](${relatedPageId})`）で生成します
    - リンク先のページタイトルを取得するために、`${pages}` 配列から該当するページオブジェクトを検索します
    - 生成されたリンクをMarkdownコンテンツの適切な位置（Introductionセクションの最後など）に追加します
    - リンク先のページが存在しない場合でも、リンクを生成します（警告は表示しません）
