@@ -31,6 +31,18 @@ Spec-Driven Developmentとコマンド定義の分離を重視した構造。プ
 **Purpose**: Cursorエージェント用のコマンド定義（Markdown形式）  
 **Example**: `kiro/spec-init.md`, `ai-wiki/init.md`
 
+### Repository Storage（分析対象リポジトリ）
+**Location**: `repo/`  
+**Purpose**: Wiki生成の対象となるリポジトリを格納するディレクトリ  
+**Pattern**: `repo/{repository-name}/` 形式で、各リポジトリをサブディレクトリとして配置  
+**Note**: `.gitignore`で除外され、バージョン管理外
+
+### Wiki Output（Wiki出力先）
+**Location**: `.wiki/` または `wiki/`  
+**Purpose**: 生成されたWiki構造JSON（`wiki_structure.json`）とWikiページの出力先  
+**Pattern**: デフォルトは `.wiki/`、コマンド引数で変更可能  
+**Note**: `.gitignore`で除外され、バージョン管理外
+
 ## Naming Conventions
 
 - **Specディレクトリ**: `kebab-case`（例: `wiki-topic-analysis-prompt`）
