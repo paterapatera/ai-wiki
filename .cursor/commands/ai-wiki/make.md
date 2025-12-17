@@ -129,7 +129,7 @@ Immediately after the \`<details>\` block, the main title of the page should be 
 
 Based ONLY on the content of the \`[RELEVANT_SOURCE_FILES]\`:
 
-1.  **Introduction:** Start with a concise introduction (1-2 paragraphs) explaining the purpose, scope, and high-level overview of "${page.title}" within the context of the overall project. If relevant, and if information is available in the provided files, link to other potential wiki pages using the format \`[Link Text](#page-anchor-or-id)\`.
+1.  **Introduction:** Start with a concise introduction (1-2 paragraphs) explaining the purpose, scope, and high-level overview of "${page.title}" within the context of the overall project. If relevant, and if information is available in the provided files, link to other potential wiki pages using the format \`[Link Text](page-anchor-or-id)\`.
 
 2.  **Detailed Sections:** Break down "${page.title}" into logical sections using H2 (\`##\`) and H3 (\`###\`) Markdown headings. For each section:
     *   Explain the architecture, components, data flow, or logic relevant to the section's focus, as evidenced in the source files.
